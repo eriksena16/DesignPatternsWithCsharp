@@ -48,6 +48,7 @@ namespace DesignPatterns
             Console.WriteLine("2 - DebitCard (Fee 1%)");
             Console.WriteLine("3 - Pix (Discount 5%)");
             Console.WriteLine("4 - Boleto");
+            Console.WriteLine("5 - PayPal (Fee 4%)");
             Console.WriteLine("0 - Exit");
 
             string paymentType = Console.ReadLine();

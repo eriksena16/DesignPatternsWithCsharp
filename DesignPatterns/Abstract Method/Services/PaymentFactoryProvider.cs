@@ -10,7 +10,8 @@ namespace DesignPatterns
             ["1"] = typeof(CreditCardPaymentFactory),
             ["2"] = typeof(DebitCardPaymentFactory),
             ["3"] = typeof(PixPaymentFactory),
-            ["4"] = typeof(BoletoPaymentFactory)
+            ["4"] = typeof(BoletoPaymentFactory),
+            ["5"] = typeof(PayPalPaymentFactory)
         };
 
         public PaymentFactoryProvider(IServiceProvider serviceProvider)

@@ -31,6 +31,7 @@
                 "2" => "Payment Type: 2 - DebitCard (Tax 1%)",
                 "3" => "Payment Type: 3 - Pix (Discount 5%)",
                 "4" => "Payment Type: 4 - Boleto",
+                "5" => "Payment Type: 5 - PayPal (Fee 4%)",
                 "0" => "Returning to menu...",
                 _ => "Invalid choice, please try again."
             };

@@ -15,6 +15,7 @@ namespace DesignPatterns
                     services.AddScoped<DebitCardPaymentFactory>();
                     services.AddScoped<CreditCardPaymentFactory>();
                     services.AddScoped<BoletoPaymentFactory>();
+                    services.AddScoped<PayPalPaymentFactory>();
 
                     services.AddSingleton<IPaymentFactoryProvider, PaymentFactoryProvider>();
                     services.AddTransient<PaymentService>();
