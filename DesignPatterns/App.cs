@@ -18,7 +18,9 @@ namespace DesignPatterns
                     services.AddScoped<PayPalPaymentFactory>();
 
                     services.AddSingleton<IPaymentFactoryProvider, PaymentFactoryProvider>();
+                    services.AddSingleton<INotificationFactoryProvider, NotificationFactoryProvider>();
                     services.AddTransient<PaymentService>();
+                    services.AddTransient<NotificationService>();
                 })
                 .Build();
 
