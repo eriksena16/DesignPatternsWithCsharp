@@ -1,0 +1,4 @@
+﻿using DesignPatterns;
+
+
+MenuFacturyProvider.ShowMenu();
