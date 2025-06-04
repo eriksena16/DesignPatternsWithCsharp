@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DesignPatterns.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using System.Globalization;
 
 namespace DesignPatterns
@@ -11,6 +12,7 @@ namespace DesignPatterns
             Console.WriteLine("****** Menu 1 ******");
             Console.WriteLine("1 - Abstract Factory");
             Console.WriteLine("2 - Factory Method");
+            Console.WriteLine("3 - Builder");
             Console.WriteLine("0 - Exit");
 
             string menuOption = Console.ReadLine();
@@ -26,6 +28,9 @@ namespace DesignPatterns
                     break;
                 case "2":
                     ShowMenuFactory();
+                    break;
+                case "3":
+                    ShowMenuBuilder();
                     break;
                 case "0":
                     Environment.Exit(0);
@@ -80,6 +85,41 @@ namespace DesignPatterns
             paymentService.Process(paymentType, decimal.Parse(purchaseamount, CultureInfo.InvariantCulture));
 
             ShowMenuAbstract();
+        }
+        public static void ShowMenuBuilder()
+        {
+            Console.WriteLine("****** 3 - Builder ******");
+
+            Console.WriteLine("Type Report:");
+            Console.WriteLine("1 - Report");
+            Console.WriteLine("0 - Back");
+
+            string typeReport= Console.ReadLine();
+
+            if (typeReport == "0") ShowMenu();
+
+            Console.WriteLine("Type report title: Ex: Monthly Report");
+            string title = Console.ReadLine();
+            Console.WriteLine("Type report header: Ex: Header Information");
+            string header = Console.ReadLine();
+            Console.WriteLine("Type report footer: Ex: Footer Information");
+            string footer = Console.ReadLine();
+            Console.WriteLine("Include charts? (yes/no)");
+            string includeCharts = Console.ReadLine()?.ToLower();
+
+            var reportBuilder = new ReportBuilder()
+                .WithTitle(title)
+                .WithHeader(header)
+                .WithFooter(footer);
+
+            if (includeCharts == "yes")
+                reportBuilder = reportBuilder.WithCharts();
+
+            var report = reportBuilder.Build();
+
+            report.Display();
+
+            ShowMenuBuilder();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using DesignPatterns.Factory_Method;
-
-namespace DesignPatterns
+﻿namespace DesignPatterns
 {
     public class NotificationService
     {
