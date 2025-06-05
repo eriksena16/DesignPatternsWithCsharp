@@ -1,6 +1,8 @@
 ﻿using DesignPatterns.Builder;
+using DesignPatterns.Prototype.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System.Globalization;
+using System.Reflection.Metadata;
 
 namespace DesignPatterns
 {
@@ -13,6 +15,7 @@ namespace DesignPatterns
             Console.WriteLine("1 - Abstract Factory");
             Console.WriteLine("2 - Factory Method");
             Console.WriteLine("3 - Builder");
+            Console.WriteLine("4 - Prototype");
             Console.WriteLine("0 - Exit");
 
             string menuOption = Console.ReadLine();
@@ -31,6 +34,9 @@ namespace DesignPatterns
                     break;
                 case "3":
                     ShowMenuBuilder();
+                    break;
+                case "4":
+                    ShowMenuPrototype();
                     break;
                 case "0":
                     Environment.Exit(0);
@@ -94,7 +100,7 @@ namespace DesignPatterns
             Console.WriteLine("1 - Report");
             Console.WriteLine("0 - Back");
 
-            string typeReport= Console.ReadLine();
+            string typeReport = Console.ReadLine();
 
             if (typeReport == "0") ShowMenu();
 
@@ -120,6 +126,33 @@ namespace DesignPatterns
             report.Display();
 
             ShowMenuBuilder();
+        }
+        public static void ShowMenuPrototype()
+        {
+            Console.WriteLine("****** 4 - Prototype ******");
+
+            Console.WriteLine("Type Clone:");
+            Console.WriteLine("1 - Invoice Document");
+            Console.WriteLine("0 - Back");
+
+            string typeClone = Console.ReadLine();
+
+            if (typeClone == "0") ShowMenu();
+
+            Console.WriteLine("Type Invoice Number: Ex 1001");
+            string invoiceNumber = Console.ReadLine();
+            Console.WriteLine("Type Amount: Ex 65.45");
+            string amount = Console.ReadLine();
+
+            var invoiceOriginal = new InvoiceDocument(int.Parse(invoiceNumber), decimal.Parse(amount, CultureInfo.InvariantCulture));
+            invoiceOriginal.DisplayInfo();
+
+            var invoice1 = invoiceOriginal.Clone();
+            invoice1.InvoiceNumber = 1002; // Change the cloned invoice number
+
+            invoice1.DisplayInfo();
+
+            ShowMenuPrototype();
         }
     }
 }
