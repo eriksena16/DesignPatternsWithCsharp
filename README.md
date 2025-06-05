@@ -39,6 +39,26 @@ Currently, it includes examples of the **Abstract Factory** and **Factory Method
 
 ---
 
+### 3. Builder
+
+🇧🇷 O padrão **Builder** separa a construção de um objeto complexo da sua representação, permitindo que o mesmo processo de construção crie diferentes representações.  
+🇺🇸 The **Builder** pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+#### 💡 Exemplo / Example:
+- 🇧🇷 Simula a geração de um **relatório personalizado**, com partes opcionais como:
+  - Título
+  - Cabeçalho
+  - Rodapé
+  - Gráficos (charts)
+- 🇺🇸 Simulates the generation of a **custom report**, with optional parts such as:
+  - Title
+  - Header
+  - Footer
+  - Charts
+
+🇧🇷 A construção é realizada passo a passo por um objeto construtor, permitindo flexibilidade e reutilização da lógica.  
+🇺🇸 The construction is performed step by step by a builder object, allowing flexibility and reuse of the logic.
+
 ## 🚧 Em breve | Coming Soon
 
 - Strategy  
