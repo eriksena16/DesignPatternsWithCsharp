@@ -59,6 +59,26 @@ Currently, it includes examples of the **Abstract Factory** and **Factory Method
 🇧🇷 A construção é realizada passo a passo por um objeto construtor, permitindo flexibilidade e reutilização da lógica.  
 🇺🇸 The construction is performed step by step by a builder object, allowing flexibility and reuse of the logic.
 
+### 4. Prototype
+
+🇧🇷 O padrão **Prototype** permite criar novos objetos copiando uma instância existente, em vez de criar do zero. Isso é útil quando a criação de um objeto é custosa ou complexa.  
+🇺🇸 The **Prototype** pattern allows you to create new objects by copying an existing instance, rather than building one from scratch. It's useful when object creation is expensive or complex.
+
+#### 💡 Exemplo / Example:
+- 🇧🇷 Simula a **clonagem de um documento de fatura** (`InvoiceDocument`) com os dados:
+  - `InvoiceNumber`
+  - `Amount`
+- 🇺🇸 Simulates **cloning an invoice document** (`InvoiceDocument`) with data:
+  - `InvoiceNumber`
+  - `Amount`
+
+🧾 Saída esperada / Expected output:  
+`[Invoice] Number: 12345, Amount: $1,000.00`
+
+🇧🇷 A interface `IPrototype` define o contrato para clonagem, garantindo a criação de cópias independentes.  
+🇺🇸 The `IPrototype` interface defines the contract for cloning, ensuring the creation of independent copies.
+
+
 ## 🚧 Em breve | Coming Soon
 
 - Strategy  
